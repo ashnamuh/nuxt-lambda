@@ -1,11 +1,6 @@
 const express = require('express')
-const { Nuxt } = require('nuxt')
+const { nuxt } = require('./nuxt')
 const app = express()
-
-// Import and Set Nuxt.js options
-const config = require('../nuxt.config.js')
-
-const nuxt = new Nuxt(config)
 
 const BASE_URL = '/dev'
 const REGEXP_BASE_URL = new RegExp(`^${BASE_URL}`)
