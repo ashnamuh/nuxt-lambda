@@ -1,5 +1,7 @@
 const express = require('express')
+// const config = require('../config/')
 const { nuxt } = require('./nuxt')
+
 const app = express()
 
 const BASE_URL = '/dev'
@@ -19,6 +21,7 @@ const envMiddleware = (req, res, next) => {
   next()
 }
 
+// if (process.env)
 app.use(envMiddleware)
 
 app.use(async (req, res, next) => {

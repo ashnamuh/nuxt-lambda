@@ -1,7 +1,10 @@
 <template>
   <div class="indexMargin">
-    <h1>This is the Front Page!</h1>
+    <h1>This is the Front Page.</h1>
     <h3>The chosen one is called {{ chosenOne }}</h3>
+    <nuxt-link to="/serverless">
+      serverless
+    </nuxt-link>
   </div>
 </template>
 
@@ -14,7 +17,6 @@ export default {
     }
   },
   async asyncData({ params }) {
-    console.log('asyncDat!') // eslint-disable-line
     const { data } = await axios.get('https://swapi.co/api/people/1/')
     return { chosenOne: data.name }
   },
