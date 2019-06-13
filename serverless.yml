@@ -17,6 +17,34 @@ functions:
           path: '{proxy+}'
           method: get
 
+package:
+  excludeDevDependencies: true
+  exclude:
+    - .**
+    - .**/*
+    - pages/**
+    - components/**
+    - store/**
+    - static/**
+    - assets/**
+    - layouts/**
+    - plugins/**
+    - test/**
+    - middleware/**
+    - README.md
+    - package.json
+    - package-lock.json
+    - node_modules/**/*.md
+    - node_modules/**/bin/**
+  include:
+    - server/**
+    - config/**
+    - nuxt.config.js
+    - .nuxt/**
+    - node_modules/autoprefixer/**
+    - node_modules/babel-runtime/**
+    - node_modules/babel-extract-comments/**
+
 plugins:
   - serverless-apigw-binary
 
