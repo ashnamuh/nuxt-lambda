@@ -27,7 +27,6 @@ package:
     - pages/**
     - components/**
     - store/**
-    - static/**
     - assets/**
     - layouts/**
     - plugins/**
