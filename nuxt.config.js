@@ -17,6 +17,13 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  performance: {
+    gzip: false
+  },
+  router: {
+    base: '/dev'
+  },
+  dev: false,
 
   /*
   ** Customize the progress-bar color

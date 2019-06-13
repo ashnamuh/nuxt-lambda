@@ -1,0 +1,26 @@
+service: nuxt-lambda-ashnamuh2
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: ap-northeast-2
+
+functions:
+  render:
+    handler: server/handler.render
+    events:
+      - http:
+          path: '/'
+          method: get
+      - http:
+          path: '{proxy+}'
+          method: get
+
+plugins:
+  - serverless-apigw-binary
+
+custom:
+  apigwBinary:
+    types:
+      - '*/*'
