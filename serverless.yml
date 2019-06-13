@@ -8,6 +8,8 @@ provider:
 
 functions:
   render:
+    warmup:
+      enabled: true
     handler: server/handler.render
     events:
       - http:
@@ -47,6 +49,7 @@ package:
 
 plugins:
   - serverless-apigw-binary
+  - serverless-plugin-warmup
 
 custom:
   apigwBinary:

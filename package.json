@@ -41,6 +41,7 @@
     "jest": "^24.1.0",
     "nodemon": "^1.18.9",
     "serverless-apigw-binary": "^0.4.4",
+    "serverless-plugin-warmup": "^4.5.3-rc.1",
     "vue-jest": "^3.0.3"
   }
 }
