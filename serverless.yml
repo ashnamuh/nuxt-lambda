@@ -3,13 +3,15 @@ service: nuxt-lambda-ashnamuh2
 provider:
   name: aws
   runtime: nodejs8.10
-  stage: dev
+  stage: ${file(./config/index.js):serverlessConfig.stage}
   region: ap-northeast-2
+  environment:
+    NODE_ENV: ${file(./config/index.js):serverlessConfig.NODE_ENV}
 
 functions:
   render:
     warmup:
-      enabled: true
+      enabled: ${file(./config/index.js):serverlessConfig.warmup}
     handler: server/handler.render
     events:
       - http:
@@ -39,7 +41,8 @@ package:
     - node_modules/**/bin/**
   include:
     - server/**
-    - config/**
+    - config/index.js
+    - config/config.js
     - nuxt.config.js
     - .nuxt/**
     - node_modules/autoprefixer/**

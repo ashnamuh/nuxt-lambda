@@ -1,8 +1,10 @@
 const express = require('express')
+const { config } = require('../config/')
 const { nuxt } = require('./nuxt')
+
 const app = express()
 
-const BASE_URL = '/dev'
+const BASE_URL = config.server.baseUrl
 const REGEXP_BASE_URL = new RegExp(`^${BASE_URL}`)
 const BASE_URL_TO_BE_ADDED = BASE_URL.replace(/\/$/, '')
 const buildPath = (originalPath) => {

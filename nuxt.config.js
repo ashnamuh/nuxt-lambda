@@ -1,4 +1,4 @@
-const pkg = require('./package')
+const { config } = require('./config')
 
 module.exports = {
   mode: 'universal',
@@ -7,11 +7,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'nuxt ashnamuh lambda',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: 'deplying nuxt to lambda example by ashnamuh' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -21,7 +21,7 @@ module.exports = {
     gzip: false
   },
   router: {
-    base: '/dev'
+    base: config.server.baseUrl
   },
   dev: false,
 
