@@ -1,6 +1,6 @@
 const serverless = {
   stage: 'prod',
-  warmup: true,
+  warmup: true, // whether enable lambda function warm up
   NODE_ENV: process.env.NODE_ENV || 'development'
 }
 
