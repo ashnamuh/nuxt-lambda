@@ -1,20 +1,23 @@
 const { Builder } = require('nuxt')
 const consola = require('consola')
+const internalIp = require('internal-ip')
+const { config } = require('../config/')
 const app = require('./app')
-const { nuxt, config } = require('./nuxt')
+const { nuxt, nuxtConfig } = require('./nuxt')
 
-const host = process.env.HOST || 'localhost'
-const port = process.env.PORT || 3000
+const port = config.server.port
 
 const start = async () => {
-  if (config.dev) {
+  if (nuxtConfig.dev) {
     const builder = new Builder(nuxt)
     await builder.build()
+  } else {
+    await nuxt.ready()
   }
 
-  app.listen(port, host)
+  app.listen(port)
   consola.ready({
-    message: `Server listening on http://${host}:${port}`,
+    message: `Server listening on http://${internalIp.v4.sync()}:${port}`,
     badge: true
   })
 }

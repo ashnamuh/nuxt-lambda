@@ -23,7 +23,6 @@ module.exports = {
   router: {
     base: config.server.baseUrl
   },
-  dev: false,
 
   /*
   ** Customize the progress-bar color

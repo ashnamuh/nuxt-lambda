@@ -6,7 +6,6 @@ const serverless = {
 
 const server = {
   port: 3002,
-  host: '0.0.0.0',
   baseUrl: `/${serverless.stage}/`
 }
 

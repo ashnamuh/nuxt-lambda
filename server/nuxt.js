@@ -1,9 +1,12 @@
 const { Nuxt } = require('nuxt')
-const config = require('../nuxt.config.js')
+const { config } = require('../config/')
+const nuxtConfig = require('../nuxt.config.js')
 
-const nuxt = new Nuxt(config)
+nuxtConfig.dev = !(config.serverless.NODE_ENV === 'production')
+
+const nuxt = new Nuxt(nuxtConfig)
 
 module.exports = {
   nuxt,
-  config
+  nuxtConfig
 }
